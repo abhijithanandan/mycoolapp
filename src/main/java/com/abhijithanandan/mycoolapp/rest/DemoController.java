@@ -1,5 +1,6 @@
 package com.abhijithanandan.mycoolapp.rest;
 
+import com.abhijithanandan.mycoolapp.common.Coach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;

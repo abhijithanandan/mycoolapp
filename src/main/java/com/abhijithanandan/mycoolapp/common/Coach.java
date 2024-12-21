@@ -1,4 +1,4 @@
-package com.abhijithanandan.mycoolapp.rest;
+package com.abhijithanandan.mycoolapp.common;
 
 public interface Coach {
     String dailyWorkout();
