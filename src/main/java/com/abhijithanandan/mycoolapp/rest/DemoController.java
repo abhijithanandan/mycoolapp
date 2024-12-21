@@ -1,6 +1,7 @@
 package com.abhijithanandan.mycoolapp.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,7 +23,7 @@ public class DemoController {
     // Use this when we have optional dependencies, provide a reasonable default logic
 
     @Autowired
-    public void setMyCoach(Coach myCoach) {
+    public void setMyCoach(@Qualifier("baesballCoach") Coach myCoach) {
         this.myCoach = myCoach;
     }
 
