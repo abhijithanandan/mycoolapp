@@ -17,7 +17,8 @@ public class MycoolappApplication {
 
     @Bean
     public CommandLineRunner commandLineRunner(StudentDAO studentDao) {
-        return runner  -> createStudent(studentDao);
+//        return runner  -> createStudent(studentDao);
+        return runner -> createMultipleStudents(studentDao);
 //        return runner -> readStudent(studentDao);
 //        return runner -> queryStudents(studentDao);
 //        return runner -> queryStudentsbyFirstName(studentDao);
@@ -39,8 +40,26 @@ public class MycoolappApplication {
         // display the student
         System.out.println(student);
 
-
     }
+
+    private void createMultipleStudents(StudentDAO studentDao) {
+    // create multiple student objects
+    System.out.println("Creating multiple student objects");
+    Student student1 = new Student("John", "Doe", "john@luv2code.com");
+    Student student2 = new Student("Mary", "Public", "mary@luv2code.com");
+    Student student3 = new Student("Bonita", "Applebum", "bonita@luv2code.com");
+
+    // save the students
+    System.out.println("Saving the students");
+    studentDao.save(student1);
+    studentDao.save(student2);
+    studentDao.save(student3);
+
+    // display the students
+    System.out.println(student1);
+    System.out.println(student2);
+    System.out.println(student3);
+}
 
     private void readStudent(StudentDAO studentDao) {
         // get the student by id
