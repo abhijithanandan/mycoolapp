@@ -16,9 +16,7 @@ public class MycoolappApplication {
 
     @Bean
     public CommandLineRunner commandLineRunner(StudentDAO studentDao) {
-        return runner  -> {
-            createStudent(studentDao);
-        };
+        return runner  -> createStudent(studentDao);
     }
 
     private void createStudent(StudentDAO studentDao) {
@@ -35,6 +33,13 @@ public class MycoolappApplication {
         System.out.println(student);
 
 
+    }
+
+    private void readStudent(StudentDAO studentDao) {
+        // get the student by id
+        System.out.println("Getting student by id");
+        Student student = studentDao.findById(1);
+        System.out.println(student);
     }
 
 }
