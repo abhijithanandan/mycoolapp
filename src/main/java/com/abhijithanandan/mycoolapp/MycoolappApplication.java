@@ -2,6 +2,7 @@ package com.abhijithanandan.mycoolapp;
 
 import com.abhijithanandan.mycoolapp.dao.StudentDAO;
 import com.abhijithanandan.mycoolapp.entity.Student;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -19,7 +20,8 @@ public class MycoolappApplication {
 //        return runner  -> createStudent(studentDao);
 //        return runner -> readStudent(studentDao);
 //        return runner -> queryStudents(studentDao);
-        return runner -> queryStudentsbyFirstName(studentDao);
+//        return runner -> queryStudentsbyFirstName(studentDao);
+        return runner -> updateStudent(studentDao);
     }
 
     private void createStudent(StudentDAO studentDao) {
@@ -57,4 +59,20 @@ public class MycoolappApplication {
         studentDao.findByFirstName("John").forEach(System.out::println);
     }
 
+    private void updateStudent(StudentDAO studentDao) {
+        // get the student by id
+        System.out.println("Getting student by id");
+        Student student = studentDao.findById(1);
+        System.out.println(student);
+
+        // update the student
+        System.out.println("Updating the student");
+        student.setFirstName("Scooby");
+        studentDao.update(student);
+
+        // get the student by id
+        System.out.println("Getting student by id");
+        student = studentDao.findById(1);
+        System.out.println(student);
+    }
 }
