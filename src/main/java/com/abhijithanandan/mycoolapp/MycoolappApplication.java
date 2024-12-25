@@ -18,7 +18,8 @@ public class MycoolappApplication {
     public CommandLineRunner commandLineRunner(StudentDAO studentDao) {
 //        return runner  -> createStudent(studentDao);
 //        return runner -> readStudent(studentDao);
-        return runner -> queryStudents(studentDao);
+//        return runner -> queryStudents(studentDao);
+        return runner -> queryStudentsbyFirstName(studentDao);
     }
 
     private void createStudent(StudentDAO studentDao) {
@@ -48,6 +49,12 @@ public class MycoolappApplication {
         // get all students
         System.out.println("Getting all students");
         studentDao.findAll().forEach(System.out::println);
+    }
+
+    private void queryStudentsbyFirstName(StudentDAO studentDao) {
+        // get all students
+        System.out.println("Getting all students by first name");
+        studentDao.findByFirstName("John").forEach(System.out::println);
     }
 
 }
