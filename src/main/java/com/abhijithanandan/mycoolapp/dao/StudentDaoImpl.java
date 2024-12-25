@@ -33,7 +33,7 @@ public class StudentDaoImpl implements StudentDAO {
 
     @Override
     public List<Student> findAll() {
-        TypedQuery<Student> query = entityManager.createQuery("FROM Student order by lastName asc", Student.class);
+        TypedQuery<Student> query = entityManager.createQuery("FROM Student order by id desc", Student.class);
         return query.getResultList();
     }
 }
