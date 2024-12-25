@@ -5,6 +5,16 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "student")
 public class Student {
+
+    public Student(String firstName, String lastName, String email) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+    }
+
+    public Student() {
+    }
+
     @Override
     public String toString() {
         return "Student{" +
