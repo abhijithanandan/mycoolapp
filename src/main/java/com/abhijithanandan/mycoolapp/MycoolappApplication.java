@@ -15,17 +15,17 @@ public class MycoolappApplication {
         SpringApplication.run(MycoolappApplication.class, args);
     }
 
-    @Bean
-    public CommandLineRunner commandLineRunner(StudentDAO studentDao) {
-//        return runner  -> createStudent(studentDao);
-        return runner -> createMultipleStudents(studentDao);
-//        return runner -> readStudent(studentDao);
-//        return runner -> queryStudents(studentDao);
-//        return runner -> queryStudentsbyFirstName(studentDao);
-//        return runner -> updateStudent(studentDao);
-//        return runner -> deleteStudent(studentDao);
-//        return runner -> deleteAllStudents(studentDao);
-    }
+//    @Bean
+//    public CommandLineRunner commandLineRunner(StudentDAO studentDao) {
+////        return runner  -> createStudent(studentDao);
+////        return runner -> createMultipleStudents(studentDao);
+////        return runner -> readStudent(studentDao);
+////        return runner -> queryStudents(studentDao);
+////        return runner -> queryStudentsbyFirstName(studentDao);
+////        return runner -> updateStudent(studentDao);
+////        return runner -> deleteStudent(studentDao);
+////        return runner -> deleteAllStudents(studentDao);
+//    }
 
     private void createStudent(StudentDAO studentDao) {
 

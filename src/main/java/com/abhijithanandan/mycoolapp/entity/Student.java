@@ -1,6 +1,7 @@
 package com.abhijithanandan.mycoolapp.entity;
 
 import jakarta.persistence.*;
+import org.springframework.lang.NonNull;
 
 @Entity
 @Table(name = "student")

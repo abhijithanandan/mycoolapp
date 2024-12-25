@@ -9,28 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DemoController {
 
-    // define a private field for dependency
-    private Coach myCoach;
-
-    // define constructor for dependency injection
-
-    // Generally recommended by the spring.io development team as first choice
-
-//    @Autowired
-//    public DemoController(Coach theCoach) {
-//        myCoach = theCoach;
-//    }
-
-    // Use this when we have optional dependencies, provide a reasonable default logic
-
-    @Autowired
-    public void setMyCoach(@Qualifier("baesballCoach") Coach myCoach) {
-        this.myCoach = myCoach;
+    // Create a mapping for "/hello"
+    @GetMapping("/hello")
+    public String sayHello() {
+        return "Hello World!";
     }
-
-    @GetMapping("/getdailyworkout")
-    public String getDailyWorkout() {
-        return myCoach.dailyWorkout();
-    }
-
 }
