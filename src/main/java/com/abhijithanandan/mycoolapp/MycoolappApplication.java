@@ -17,11 +17,12 @@ public class MycoolappApplication {
 
     @Bean
     public CommandLineRunner commandLineRunner(StudentDAO studentDao) {
-//        return runner  -> createStudent(studentDao);
+        return runner  -> createStudent(studentDao);
 //        return runner -> readStudent(studentDao);
 //        return runner -> queryStudents(studentDao);
 //        return runner -> queryStudentsbyFirstName(studentDao);
-        return runner -> updateStudent(studentDao);
+//        return runner -> updateStudent(studentDao);
+//        return runner -> deleteStudent(studentDao);
     }
 
     private void createStudent(StudentDAO studentDao) {
@@ -74,5 +75,20 @@ public class MycoolappApplication {
         System.out.println("Getting student by id");
         student = studentDao.findById(1);
         System.out.println(student);
+    }
+
+    private void deleteStudent(StudentDAO studentDao) {
+        // get the student by id
+        System.out.println("Getting student by id");
+        Student student = studentDao.findById(1);
+        System.out.println(student);
+
+        // delete the student
+        System.out.println("Deleting the student");
+        studentDao.deleteById(1);
+
+        // get all students
+        System.out.println("Getting all students");
+        studentDao.findAll().forEach(System.out::println);
     }
 }
