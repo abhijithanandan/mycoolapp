@@ -32,7 +32,7 @@ body:
       label: "Screenshots"
       description: If applicable, add screenshots to help explain your problem.
       value: |
-	Copy and paste your image here or embed with markdown -
+        Copy and paste your image here or embed with markdown -
         ![DESCRIPTION](LINK.png)
       render: bash
     validations:
@@ -51,11 +51,11 @@ body:
       label: To Reproduce
       description: Tell us how we can reproduce the issue!
       placeholder: |
-	Steps to reproduce the behavior
-	1. Go to '...'
-	2. Click on '....'
-	3. Scroll down to '....'
-	4. See error
+        Steps to reproduce the behavior
+        1. Go to '...'
+        2. Click on '....'
+        3. Scroll down to '....'
+        4. See error
     validations:
       required: true
   - type: dropdown
@@ -76,10 +76,10 @@ body:
       options:
         - Firefox
         - Chrome
-	- Brave
+        - Brave
         - Safari
         - Microsoft Edge
-	- Other
+        - Other
   - type: dropdown
     id: os 
     attributes:
@@ -87,10 +87,10 @@ body:
       multiple: true
       options:
         - Windows
-	- Linux
-	- MacOS
-	- Android
-	- iOS
+        - Linux
+        - MacOS
+        - Android
+        - iOS
   - type: textarea
     id: logs
     attributes:
@@ -103,7 +103,7 @@ body:
       label: Additional Context
       description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
       placeholder: |
-	Additionally I would like you to refer...
+         Additionally I would like you to refer...
   - type: checkboxes
     id: terms
     attributes:
